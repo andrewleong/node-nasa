@@ -6,7 +6,7 @@ const launch = {
   mission: 'Kepler Exploration X',
   rocket: 'Explorer 1S2',
   launchDate: new Date('December 26, 2030'),
-  destination: 'Kepler-442 b',
+  target: 'Kepler-442 b',
   flightNumber: 100,
   customers: ['ZTM', 'NASA'],
   upcoming: true,
@@ -32,7 +32,20 @@ const createLaunch = (launch) => {
   )
 }
 
+const foundLaunchId = (id) => {
+  return launches.has(id)
+}
+
+const abortLaunchById = (id) => {
+  const aborted = launches.get(id)
+  aborted.upcoming = false
+  aborted.success = false
+  return aborted
+}
+
 module.exports = {
   listLaunches,
   createLaunch,
+  foundLaunchId,
+  abortLaunchById,
 }
