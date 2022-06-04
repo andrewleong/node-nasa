@@ -1,0 +1,19 @@
+{
+  "name": "nasa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "install-server": "yarn install --cwd server",
+    "install-client": "yarn install --cwd client",
+    "install": "yarn run install-server && yarn run install-client",
+    "server": "yarn --cwd server watch",
+    "client": "yarn --cwd client start",
+    "watch": "yarn run server & yarn run client",
+    "test": "yarn --cwd server test && yarn --cwd client test",
+    "deploy": "yarn run server & yarn --cwd client build && yarn --cwd client start"
+  },
+  "dependencies": {
+    "morgan": "^1.10.0"
+  }
+}
