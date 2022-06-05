@@ -5,12 +5,14 @@
   "license": "MIT",
   "scripts": {
     "watch": "nodemon src/server.js",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "cluster": "pm2 start src/server.js -i max"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "csv-parse": "^5.0.4",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "pm2": "^5.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15",

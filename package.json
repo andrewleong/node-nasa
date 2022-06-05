@@ -11,7 +11,8 @@
     "client": "yarn --cwd client start",
     "watch": "yarn run server & yarn run client",
     "test": "yarn --cwd server test && yarn --cwd client test",
-    "deploy": "yarn run server & yarn --cwd client build && yarn --cwd client start"
+    "deploy": "yarn run server & yarn --cwd client build && yarn --cwd client start",
+    "deploy-cluster": "yarn --cwd server cluster & yarn --cwd client build && yarn --cwd client start"
   },
   "dependencies": {
     "morgan": "^1.10.0"
