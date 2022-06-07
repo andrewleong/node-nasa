@@ -1,7 +1,7 @@
 const planetsModel = require('../models/planets.model')
 
-const listPlanets = (req, res) => {
-  return res.status(200).json(planetsModel.listPlanets())
+const listPlanets = async (req, res) => {
+  return res.status(200).json(await planetsModel.listPlanets())
 }
 
 module.exports = {
